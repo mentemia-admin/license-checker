@@ -97,6 +97,8 @@ checker.init(args, function(err, json) {
     if (args.files) {
         checker.asFiles(json, args.files);
     } else if (args.out) {
+        var summary = checker.asSummary(json);
+        console.log(summary);
         var dir = path.dirname(args.out);
         mkdirp.sync(dir);
         fs.writeFileSync(args.out, formattedOutput, 'utf8');
