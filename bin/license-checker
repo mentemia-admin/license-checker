@@ -103,6 +103,7 @@ checker.init(args, function(err, json) {
     } else {
         console.log(formattedOutput);
     }
+    console.log("Number of entries found:", Object.keys(json).length);
 });
 
 function shouldColorizeOutput(args) {
