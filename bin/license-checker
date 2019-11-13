@@ -82,7 +82,7 @@ checker.init(args, function(err, json) {
     }
 
     if (args.json) {
-        formattedOutput = JSON.stringify(json, null, 2) + '\n';
+        formattedOutput = checker.asJson(json, args.customFormat) + '\n';
     } else if (args.csv) {
         formattedOutput = checker.asCSV(json, args.customFormat, args.csvComponentPrefix);
     } else if (args.markdown){
